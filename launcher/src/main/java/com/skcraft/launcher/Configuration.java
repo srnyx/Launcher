@@ -37,8 +37,8 @@ public class Configuration {
     private String proxyUsername;
     private String proxyPassword;
     private String gameKey;
-    private boolean serverEnabled = false;
-    private String serverHost;
+    private boolean serverEnabled = true;
+    private String serverHost;/* = "play.bapplause.xyz"*/
     private int serverPort = 25565;
 
     @Override

@@ -83,7 +83,7 @@ public class ConfigurationDialog extends JDialog {
         jvmRuntime.addItem(AddJavaRuntime.ADD_RUNTIME_SENTINEL);
 
         jvmRuntime.setSelectedItem(config.getJavaRuntime());
-
+		
         setTitle(SharedLocale.tr("options.title"));
         initComponents(); // Must be called after jvmRuntime model setup
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

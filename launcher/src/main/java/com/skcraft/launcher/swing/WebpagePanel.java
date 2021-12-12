@@ -3,7 +3,7 @@
  * Copyright (C) 2010-2014 Albert Pham <http://www.sk89q.com> and contributors
  * Please see LICENSE.txt for license information.
  */
-
+ 
 package com.skcraft.launcher.swing;
 
 import com.skcraft.launcher.LauncherUtils;
@@ -40,6 +40,17 @@ public final class WebpagePanel extends JPanel {
     private JProgressBar progressBar;
     private Thread thread;
     private Border browserBorder;
+
+/*    @Override
+    protected void paintComponent(Graphics g) {
+        Rectangle r = g.getClipBounds();
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.50f));
+/*        g2d.setColor(new Color(255, 255, 255));
+        g2d.fillRect(r.x, r.y, r.width, r.height);*/
+/*        super.paintComponent(g);
+    }*/
     
     public static WebpagePanel forURL(URL url, boolean lazy) {
         return new WebpagePanel(url, lazy);
@@ -120,7 +131,7 @@ public final class WebpagePanel extends JPanel {
         documentScroll = new JScrollPane(documentView);
         documentScroll.setOpaque(false);
         panel.add(documentScroll, new Integer(1));
-        documentScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        documentScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         synchronized (this) {
             if (browserBorder != null) {
                 documentScroll.setBorder(browserBorder);
@@ -295,5 +306,4 @@ public final class WebpagePanel extends JPanel {
             }
         }
     }
-
 }
